@@ -14,21 +14,6 @@
 | [LinkedIn Jobs](https://ca.linkedin.com/jobs/search/?keywords=stage%20d%C3%A9veloppement%20logiciel&location=Quebec) | Utile pour repérer les stages affichés par des entreprises technologiques et suivre leurs offres. | Mot-clé, lieu, date, niveau d'expérience, type d'emploi et modalités de travail selon les résultats de recherche. | **Consultation manuelle seulement.** Le `robots.txt` de LinkedIn indique que l'accès automatisé sans autorisation expresse est interdit. |
 | [Indeed Canada](https://ca.indeed.com/) | Agrégateur généraliste avec des offres de stages et de postes juniors. | Mots-clés, lieu, date, type d'emploi et autres filtres proposés dans l'interface. | À consulter manuellement. La page de recherche n'était pas accessible pendant cette vérification (HTTP 403); ne pas contourner le blocage ni automatiser sans autorisation claire. |
 
-## POC retenu
-
-Le premier POC est [`poc_jobbank_rss.py`](poc_jobbank_rss.py). Il lit le flux Atom public du Guichet-Emplois, extrait quelques champs des offres et filtre les lieux au Québec. Il ne visite pas les fiches une à une et ne contourne pas de connexion ou de protection.
-
-```powershell
-python .\recherche\poc_jobbank_rss.py
-python .\recherche\poc_jobbank_rss.py --term "développeur" --title-keyword "développeur" --location QC
-python .\recherche\poc_jobbank_rss.py --all-locations --limit 10
-```
-
-Le flux peut retourner des offres qui ne sont pas pertinentes uniquement parce que le mot-clé figure ailleurs dans les critères. Le script applique donc aussi un filtre local sur le titre et le lieu; par défaut, il conserve les titres contenant « developer », « développeur » ou « programmeur ». Il ne fait qu'une requête par exécution. Le `robots.txt` de Job Bank indique un délai de crawl de 5 secondes : éviter les exécutions répétées à moins de 5 secondes d'intervalle et ne pas ajouter de collecte en boucle. Pour vérifier le parseur sans réseau :
-
-```powershell
-python -m unittest discover -s .\recherche -p "test_*.py"
-```
 
 ## Sources et limites de la recherche
 
