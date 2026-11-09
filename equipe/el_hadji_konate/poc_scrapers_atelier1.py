@@ -1,11 +1,11 @@
 """
-POC Atelier 1 — Projet `jobs-insights` (V3)
+POC Atelier 1 — Projet `jobs-insights`
 Auteur : El Hadji Konaté
 
-Démonstration autonome de scraping multi-sources au Québec / Canada (100% bibliothèque standard Python) :
-1. Talent.com Canada (Double extraction JSON-LD ItemList -> JobPosting + coordonnées GPS)
+Script de preuve de concept (POC) pour scraper les sites d'offres d'emploi et de stages identifiés dans sites.md :
+1. Talent.com Canada (Extraction JSON-LD ItemList -> JobPosting + coordonnées GPS)
 2. Jobboom Québec (Catégorie Technologies _i10lfr + JSON-LD JobPosting)
-3. Guichet-Emplois Canada (Recherche par mid=22447 Ville de Québec + balises RDFa Schema.org)
+3. Guichet-Emplois Canada (Recherche Ville de Québec mid=22447 + balises RDFa Schema.org)
 4. Jobillico Québec (Recherche par mot-clé/ville + JSON-LD JobPosting)
 """
 
@@ -238,7 +238,7 @@ def poc_scrape_jobillico(keyword: str = "développeur", city: str = "Québec, QC
 
 if __name__ == "__main__":
     print("=" * 75)
-    print(" DÉMONSTRATION POC ATELIER 1 — PROJET JOBS-INSIGHTS (V3)")
+    print(" DÉMONSTRATION POC ATELIER 1 — PROJET JOBS-INSIGHTS")
     print("=" * 75)
 
     all_scraped: List[Dict[str, Any]] = []
