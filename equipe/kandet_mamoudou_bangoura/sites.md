@@ -23,4 +23,3 @@
 - [LinkedIn — robots.txt](https://www.linkedin.com/robots.txt).
 - [Indeed Canada — robots.txt](https://ca.indeed.com/robots.txt).
 
-Les filtres affichés, les offres et les règles des sites peuvent changer. Cette liste sert de point de départ pour l'atelier; elle ne constitue pas une autorisation de collecte automatisée. Le dossier `recherche` est volontairement local et exclu de GitHub.
